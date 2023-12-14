@@ -1,4 +1,5 @@
-﻿use master;
+﻿--promjena za test githuba
+use master;
 go
 drop database if exists edunovawp3;
 go
