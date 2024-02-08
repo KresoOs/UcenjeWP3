@@ -2,4 +2,6 @@
 
 using UcenjeCS;
 
-E01UlazIzlaz.Izvedi();
+E02VarijableTipoviPodatakaOperatori.Izvedi();
+
+//E01UlazIzlaz.Izvedi();
