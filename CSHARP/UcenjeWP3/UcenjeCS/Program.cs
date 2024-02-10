@@ -1,7 +1,16 @@
 ﻿
 
 using UcenjeCS;
+
 KucnaVjezba.Izvedi();
+//E09Foreach.Izvedi();
+
+//E08DoWhile.Izvedi();
+
+//E07WhilePetlja.Izvedi();
+
+//Z05.Izvedi();
+
 //E06ForPetlja.Izvedi();
 
 //E05Nizovi.Izvedi();
