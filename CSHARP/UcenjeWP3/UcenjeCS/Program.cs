@@ -1,8 +1,8 @@
 ﻿
 
 using UcenjeCS;
-
-E06ForPetlja.Izvedi();
+KucnaVjezba.Izvedi();
+//E06ForPetlja.Izvedi();
 
 //E05Nizovi.Izvedi();
 
