@@ -111,20 +111,121 @@
             //        Console.WriteLine("Ostalo");
             //        break;
             //}
-            Console.WriteLine("Unesi ime grada");
-            string grad = Console.ReadLine();
-            switch (grad)
-            {
-                case "Osijek":
-                case "Vukovar":
-                    Console.WriteLine("Slavonija");
-                    break;
-                case "Split":
-                case "Zadar":
-                    Console.WriteLine("Dalmacija");
-                    break;
+            //Console.WriteLine("Unesi ime grada");
+            //string grad = Console.ReadLine();
+            //switch (grad)
+            //{
+            //    case "Osijek":
+            //    case "Vukovar":
+            //        Console.WriteLine("Slavonija");
+            //        break;
+            //    case "Split":
+            //    case "Zadar":
+            //        Console.WriteLine("Dalmacija");
+            //        break;
 
-            }
+            //int[] Temperature = new int[12];
+            //Temperature[0] = 1;
+            //Temperature[Temperature.Length - 1] = 2;
+            //Console.WriteLine(Temperature);
+            //Console.WriteLine(string.Join(",", Temperature));
+            //string[] Gradovi = new string[3];
+            //Gradovi[0] = "Osijek";
+            //Gradovi[1] = "Zagreb";
+            //Gradovi[2] = "Donji Miholjac";
+            //Console.WriteLine(string.Join(" ", Gradovi));
+            //int[] brojevi = { 2, 3, 3, 4, 7, 5, 5, 4 };
+            //Console.WriteLine(brojevi[4]);
+            //Console.WriteLine(brojevi[brojevi.Length-1]);
+            //int[,] tablica =
+            //{
+            //    {1,2,3},
+            //    {4,5,6},
+            //    {7,8,9},
+            //};
+            //Console.WriteLine(tablica[1,2]);
+            //int[,,] kocka = new int[10,10,10];
+            //int[,,,,,] zvjezdaneStaze;
+            //ispiši samo j iz imena grada
+            //string grad = "osijek";
+            //Console.WriteLine(grad[3]);
+            ////ispiši niz da brojevi budu jedan ispod drugog
+            //int[] niz = { 1, 2, 3, 4, 5 };
+            //for (int i = 0; i < niz.Length; i++)
+            //{
+            //    Console.WriteLine(niz[i]);
+            //}
+            //Console.WriteLine("unesi prvi broj: ");
+            //int redova = int.Parse(Console.ReadLine());
+            //Console.WriteLine("unesi drugi broj: ");
+            //int stupova = int.Parse(Console.ReadLine());
+            //int[,] tab = new int[redova, stupova];
+            //int broj =redova*stupova;
+            //int red = redova-1;
+            //int stup = stupova-1;
+            //string smjer = "lijevo";
+            //for (int i = 1; i <= broj; i++)
+            //{
+            //    if (smjer == "desno" && (stup > stupova - 1 || tab[red, stup] != 0))
+            //    {
+            //        smjer = "dolje";
+            //        stup--;
+            //        red++;
+            //    }
+            //    if (smjer == "dolje" && (red > redova - 1 || tab[red, stup] != 0))
+            //    {
+            //        smjer = "lijevo";
+            //        red--;
+            //        stup--;
+            //    }
+            //    if (smjer == "lijevo" && (stup < 0 || tab[red, stup] != 0))
+            //    {
+            //        smjer = "gore";
+            //        stup++;
+            //        red--;
+            //    }
+            //    if (smjer == "gore" && (red < 0 || tab[red, stup] != 0))
+            //    {
+            //        smjer = "desno";
+            //        red++;
+            //        stup++;
+
+
+            //    }
+            //    tab[red, stup] = i;
+            //    if (smjer == "desno")
+            //    {
+            //        stup++;
+            //    }
+            //    if (smjer == "dolje")
+            //    {
+            //        red++;
+            //    }
+            //    if (smjer == "lijevo")
+            //    {
+            //        stup--;
+            //    }
+            //    if (smjer == "gore")
+            //    {
+            //        red--;
+            //    }
+
+            //}
+
+            //    for (int j = 0; j < redova; j++)
+            //    {
+            //        for (int k = 0; k < stupova; k++)
+            //        {
+            //            Console.Write("{0,4}", tab[j, k]);
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //    Console.ReadLine();
+            
+
+
+
+
         }
 
     }

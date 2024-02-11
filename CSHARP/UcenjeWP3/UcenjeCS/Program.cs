@@ -2,7 +2,8 @@
 
 using UcenjeCS;
 
-KucnaVjezba.Izvedi();
+DevilTable1.Izvedi();
+//KucnaVjezba.Izvedi();
 //E09Foreach.Izvedi();
 
 //E08DoWhile.Izvedi();
