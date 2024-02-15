@@ -221,9 +221,22 @@
             //        Console.WriteLine();
             //    }
             //    Console.ReadLine();
-            
-
-
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.WriteLine("\a");
+            //    Thread.Sleep(1000);
+            //}
+            int[] broj = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Unesi cijeli broj");
+                
+                broj[i] = int.Parse(Console.ReadLine());
+            }
+            foreach(var item in broj)
+            {
+                Console.Write("{0,4}",item);
+            }
 
 
         }

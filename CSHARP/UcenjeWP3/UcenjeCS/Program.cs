@@ -2,8 +2,9 @@
 
 using UcenjeCS;
 
-DevilTable1.Izvedi();
-//KucnaVjezba.Izvedi();
+//Subota1.Izvedi();
+KucnaVjezba.Izvedi();
+
 //E09Foreach.Izvedi();
 
 //E08DoWhile.Izvedi();
