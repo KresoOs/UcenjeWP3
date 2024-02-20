@@ -2,8 +2,13 @@
 
 using UcenjeCS;
 
+
+
+
+LjubavniKalkulator1.Izvedi();
+//E11Rekurzija.Izvedi();
 //Z06.Izvedi();
-DevilTable1.Izvedi();
+//DevilTable1.Izvedi();
 // Kada se metoda poziva na klasi (što je ovdje slučaj) ona je static
 //E10Metode.Izvedi();
 
