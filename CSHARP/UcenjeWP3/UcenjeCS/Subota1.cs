@@ -11,28 +11,28 @@ namespace UcenjeCS
 
         public static void Izvedi()
         {
-            //for(int i = 0; i < 5; i++)
-            //{
-            //    Console.WriteLine(DateTimeOffset.Now.ToUnixTimeMilliseconds());
-            //    if (i == 4)
-            //    {
-            //        break;
-            //    }
-            //    //Console.WriteLine("\a");
-            //    //Thread.Sleep(1000);  // usporavanje rada programa - spavaj jednu sekundu
-            //}
+            for(int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(DateTimeOffset.Now.ToUnixTimeMilliseconds());
+                if (i == 4)
+                {
+                    break;
+                }
+                //Console.WriteLine("\a");
+                //Thread.Sleep(1000);  // usporavanje rada programa - spavaj jednu sekundu
+            }
 
-            //int t = 2147483647;
+            int t = 2147483647;
 
-            //long l = t+1; // implicitno
+            long l = t+1; // implicitno
 
-            //l = 2147483648247246276;
+            l = 2147483648247246276;
 
-            //Console.WriteLine(l);
+            Console.WriteLine(l);
 
-            //t = (int)l; // eksplicitno
+            t = (int)l; // eksplicitno
 
-            //Console.WriteLine(t);
+            Console.WriteLine(t);
 
 
             // Program unosi tri cijela broja i ispisuje ih jedan pored drugoga
@@ -134,9 +134,8 @@ namespace UcenjeCS
 
             // Napravite program koji u konzolu ispisuje edunova
             // crenim slovima
-            Console.ForegroundColor = ConsoleColor.Red;
+
             Console.WriteLine("Edunova");
-            Console.ResetColor();
         }
     }
 }
