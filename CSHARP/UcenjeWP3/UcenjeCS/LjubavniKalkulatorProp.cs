@@ -1,11 +1,7 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace UcenjeCS
+﻿namespace UcenjeCS
 {
-    internal class LjubavniKalkulator
-
+    internal class LjubavniKalkulator1
     {
-         
         public static void Izvedi()
         {
             Console.Write("Unesi svoje ime: ");
@@ -15,7 +11,7 @@ namespace UcenjeCS
             string ime3 = ime1.ToLower() + ime2.ToLower();
             int[] A = new int[ime3.Length];
             int ponavljanje = 0;
-           var znamenke;
+
             for (int j = 0; j < A.Length; j++)
             {
                 foreach (char c in ime3)
@@ -32,32 +28,29 @@ namespace UcenjeCS
 
 
                 }
-                znamenke = ponavljanje;
-                
-                 ponavljanje = 0;
+                A[j] = ponavljanje; ponavljanje = 0;
+                //Console.Write(A[j]);
 
 
-                Console.WriteLine(znamenke);
-               // Console.WriteLine(Zbroji(znamenke, znamenke.Length));
             }
 
-           
+            Console.WriteLine(Zbroji(A, A.Length));
+
 
         }
-
-        private static int Zbroji(string A, int n)
+        private static int Zbroji(int[] A, int n)
         {
-             
             
-
             if (n == 0)
                 return 0;
-
-            return A[A.Length - n] + Zbroji(A, n - 1);
-
+            
+                return A[A.Length - n] + Zbroji(A, n - 1);
+           
 
 
         }
+
+
 
 
     }
