@@ -5,7 +5,7 @@ namespace UcenjeCS
     internal class LjubavniKalkulator
 
     {
-         
+
         public static void Izvedi()
         {
             Console.Write("Unesi svoje ime: ");
@@ -13,10 +13,10 @@ namespace UcenjeCS
             Console.Write("Unesi ime simpatije: ");
             string ime2 = Console.ReadLine();
             string ime3 = ime1.ToLower() + ime2.ToLower();
-            int[] A = new int[ime3.Length];
+            string znamenke = "";
             int ponavljanje = 0;
-           var znamenke;
-            for (int j = 0; j < A.Length; j++)
+            
+            for (int j = 0; j < ime3.Length; j++)
             {
                 foreach (char c in ime3)
                 {
@@ -29,31 +29,34 @@ namespace UcenjeCS
 
                     }
 
-
+                   
 
                 }
-                znamenke = ponavljanje;
+                 znamenke += ponavljanje.ToString();
                 
-                 ponavljanje = 0;
+                ponavljanje = 0;
 
 
                 Console.WriteLine(znamenke);
-               // Console.WriteLine(Zbroji(znamenke, znamenke.Length));
+
+                 
+
+
             }
 
-           
 
+            Console.WriteLine(Zbroji(znamenke, znamenke.Length));
         }
 
         private static int Zbroji(string A, int n)
         {
-             
-            
+               
+
 
             if (n == 0)
                 return 0;
 
-            return A[A.Length - n] + Zbroji(A, n - 1);
+            return (A[A.Length - n]-'0')  + Zbroji(A, n - 1) ;
 
 
 
