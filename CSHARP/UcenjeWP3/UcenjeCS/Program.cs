@@ -2,9 +2,15 @@
 
 using UcenjeCS;
 
-
-
+//new UcenjeCS.E16Vjezbanje.Program();
 LjubavniKalkulator.Izvedi();
+
+//Test.Izvedi();
+
+//new UcenjeCS.E15Polimorfizam.Program();
+
+//new UcenjeCS.E14VjezbanjeRadaSObjektima.Program();
+
 // kada vidimo ključnu riječ new poziva se konstruktor
 
 //new UcenjeCS.E13Nasljedivanje.Program(); // pozvao sam konstruktor od Programa u E13...
