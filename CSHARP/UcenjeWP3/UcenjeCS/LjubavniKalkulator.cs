@@ -71,9 +71,9 @@
             int suma = pocetak + kraj;
             if (suma > 9)
             {
-                A[prvi]= suma / 10;
-                A[zadnji]= suma % 10;
-                return A[prvi] + A[zadnji]+Zbroji(A,prvi,zadnji);
+                int noviPrvi= suma / 10;
+                int noviZadnji= suma % 10;
+                return noviPrvi +Zbroji(A,prvi+1,zadnji-1) +noviZadnji;
             }
             else
             {

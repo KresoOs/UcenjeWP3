@@ -3,7 +3,7 @@
 using UcenjeCS;
 
 //new UcenjeCS.E16Vjezbanje.Program();
-LjubavniKalkulator.Izvedi();
+//LjubavniKalkulator.Izvedi();
 
 //Test.Izvedi();
 
