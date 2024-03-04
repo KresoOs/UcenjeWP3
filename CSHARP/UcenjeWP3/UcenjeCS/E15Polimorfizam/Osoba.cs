@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS.E15Polimorfizam
+﻿namespace UcenjeCS.E15Polimorfizam
 {
-    internal abstract class Osoba:Entitet
+    internal abstract class Osoba : Entitet
     {
         public abstract string Pozdravi();
         public string? Ime { get; set; }

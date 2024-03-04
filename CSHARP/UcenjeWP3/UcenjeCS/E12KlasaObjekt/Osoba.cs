@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS.E12KlasaObjekt
+﻿namespace UcenjeCS.E12KlasaObjekt
 {
     // Klasa je opisnik objekta - NAUČITI NAPAMET
     internal class Osoba
@@ -24,7 +18,7 @@ namespace UcenjeCS.E12KlasaObjekt
 
         public static void Izvedi() // Ovu metodu mogu pozvati na klasi, ne na objektu
         {
-           
+
         }
 
     }

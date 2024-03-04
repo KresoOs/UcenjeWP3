@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UcenjeCS.E12KlasaObjekt.Edunova;
+﻿using UcenjeCS.E12KlasaObjekt.Edunova;
 
 namespace UcenjeCS.E12KlasaObjekt
 {
@@ -51,8 +45,8 @@ namespace UcenjeCS.E12KlasaObjekt
                 Naziv = "Web programiranje",
                 Trajanje = 135,
                 Cijena = 1234.55m,
-                Sifra=1,
-                Vaucer=true
+                Sifra = 1,
+                Vaucer = true
             };
 
             Predavac[] predavaci =
@@ -70,7 +64,7 @@ namespace UcenjeCS.E12KlasaObjekt
             g.Predavac = predavaci[1];
             // Ispišite 135 s varijable g
 
-            
+
 
         }
 

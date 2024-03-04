@@ -11,10 +11,10 @@
             int stupova = int.Parse(Console.ReadLine());
             int[,] tab = new int[redova, stupova];
             int broj = redova * stupova;
-            int red = redova-1;
-            int stup = stupova-1;
+            int red = redova - 1;
+            int stup = stupova - 1;
             string smjer = "lijevo";
-            
+
             for (int i = 1; i <= broj; i++)
             {
                 if (smjer == "desno" && (stup > stupova - 1 || tab[red, stup] != 0))
@@ -83,7 +83,7 @@
                 }
                 Console.WriteLine();
             }
-            
+
 
 
 

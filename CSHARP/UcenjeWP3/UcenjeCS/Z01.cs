@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS
+﻿namespace UcenjeCS
 {
     internal class Z01
     {
@@ -17,7 +11,7 @@ namespace UcenjeCS
             Console.Write("Unesi cijeli broj: ");
             int broj = int.Parse(Console.ReadLine());
 
-            if(broj%2==0)
+            if (broj % 2 == 0)
             {
                 Console.WriteLine("SUPER");
             }

@@ -1,9 +1,6 @@
-﻿
-
-using UcenjeCS;
+﻿new UcenjeCS.E17KonzolnaAplikacija.Izbornik();
 
 //new UcenjeCS.E16Vjezbanje.Program();
-//LjubavniKalkulator.Izvedi();
 
 //Test.Izvedi();
 

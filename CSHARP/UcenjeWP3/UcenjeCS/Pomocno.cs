@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS
+﻿namespace UcenjeCS
 {
     internal class Pomocno
     {
         public static int UcitajCijeliBroj(string poruka)
         {
-            while (true) { 
+            while (true)
+            {
                 Console.Write(poruka + ": ");
                 try
                 {
@@ -26,17 +21,17 @@ namespace UcenjeCS
         public static int UcitajCijeliBroj(string poruka, int min, int max)
         {
             int i;
-            while(true)
+            while (true)
             {
-                i=UcitajCijeliBroj(poruka);
-                if(i<min || i > max)
+                i = UcitajCijeliBroj(poruka);
+                if (i < min || i > max)
                 {
                     Console.WriteLine("Učitani broj nije u danom rasponu " + min + " - " + max);
                     continue;
                 }
                 return i;
             }
-            
+
 
         }
 
@@ -63,11 +58,11 @@ namespace UcenjeCS
         public static string UcitajString(string poruka)
         {
             string s;
-            for(; ; )
+            for (; ; )
             {
                 Console.Write(poruka + ": ");
                 s = Console.ReadLine().Trim();
-                if(s.Length==0)
+                if (s.Length == 0)
                 {
                     Console.WriteLine("Obavezan unos");
                     continue;
@@ -79,7 +74,7 @@ namespace UcenjeCS
                     Console.WriteLine("Unos ne smije biti cijeli broj");
                     continue;
                 }
-                catch(Exception)
+                catch (Exception)
                 {
 
                 }

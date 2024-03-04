@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS
+﻿namespace UcenjeCS
 {
     internal class E04UvjetnoGrananjeSwitch
     {
@@ -14,18 +8,20 @@ namespace UcenjeCS
 
             // Ako je i=0 napiši DOBAR, i=1 napiši LOŠ, i=2 napiši ZAO
 
-            if(i== 0)
+            if (i == 0)
             {
                 Console.WriteLine("DOBAR");
-            }else if(i== 1)
+            }
+            else if (i == 1)
             {
                 Console.WriteLine("LOŠ");
-            }else if(i== 2)
+            }
+            else if (i == 2)
             {
                 Console.WriteLine("ZAO");
             }
 
-            switch(i) //radi s int, char i string
+            switch (i) //radi s int, char i string
             {
                 case 0:
                     Console.WriteLine("DOBAR");
@@ -44,7 +40,7 @@ namespace UcenjeCS
             Console.Write("Unesi ime grada: ");
             string grad = Console.ReadLine();
 
-            switch(grad)
+            switch (grad)
             {
                 case "Osijek":
                 case "Vukovar":

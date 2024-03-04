@@ -40,12 +40,12 @@
         }
         private static int Zbroji(int[] A, int n)
         {
-            
+
             if (n == 0)
                 return 0;
-            
-                return A[A.Length - n] + Zbroji(A, n - 1);
-           
+
+            return A[A.Length - n] + Zbroji(A, n - 1);
+
 
 
         }

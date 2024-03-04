@@ -230,7 +230,7 @@
             //for (int i = 0; i < 3; i++)
             //{
             //    Console.WriteLine("Unesi cijeli broj");
-                
+
             //    broj[i] = int.Parse(Console.ReadLine());
             //}
             //foreach(var item in broj)

@@ -43,7 +43,7 @@
             }
 
 
-            Console.WriteLine(Zbroji(A, 0, A.Length-1));
+            Console.WriteLine(Zbroji(A, 0, A.Length - 1));
         }
 
         private static int Zbroji(int[] A, int prvi, int zadnji)
@@ -71,13 +71,13 @@
             int suma = pocetak + kraj;
             if (suma > 9)
             {
-                int noviPrvi= suma / 10;
-                int noviZadnji= suma % 10;
-                return noviPrvi +Zbroji(A,prvi+1,zadnji-1) +noviZadnji;
+                int noviPrvi = suma / 10;
+                int noviZadnji = suma % 10;
+                return noviPrvi + Zbroji(A, prvi + 1, zadnji - 1) + noviZadnji;
             }
             else
             {
-                return suma + Zbroji(A,prvi+1,zadnji-1);
+                return suma + Zbroji(A, prvi + 1, zadnji - 1);
             }
         }
 
