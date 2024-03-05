@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UcenjeCS.E15Polimorfizam
+namespace UcenjeCS.E20Ekstenzije
 {
-    internal abstract class Entitet
+    internal interface ISucelje
     {
-        public int Sifra { get; set; }
+        public void Posao();
     }
 }

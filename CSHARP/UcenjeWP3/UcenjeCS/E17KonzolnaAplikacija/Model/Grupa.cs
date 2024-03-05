@@ -1,6 +1,6 @@
 ﻿namespace UcenjeCS.E17KonzolnaAplikacija.Model
 {
-    internal class Grupa : Entitet
+    internal class Grupa: Entitet
     {
         public string Naziv { get; set; }
         public Smjer Smjer { get; set; }

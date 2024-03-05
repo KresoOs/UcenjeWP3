@@ -1,4 +1,10 @@
-﻿namespace UcenjeCS
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UcenjeCS
 {
     internal class E10Metode
     {
@@ -6,12 +12,12 @@
         // public se vidi us svim klasama
         public static void Izvedi()
         {
-            // for(int i=0; i < 100;i++)
+           // for(int i=0; i < 100;i++)
             //{
-            // ovdje smo je pozvali
-            Tip1();
-            //ovdje je zovem drugi puta
-            Tip1();
+                // ovdje smo je pozvali
+                Tip1();
+                //ovdje je zovem drugi puta
+                Tip1();
             //}
 
             Tip2("Pero");
@@ -21,7 +27,7 @@
 
             Console.WriteLine(Tip3());
 
-            Console.WriteLine(Tip4(2, 77));
+            Console.WriteLine(Tip4(2,77));
 
         }
 
@@ -71,7 +77,7 @@
         protected static int Tip4(int odBroja, int doBroja)
         {
             int suma = 0;
-            for (int i = odBroja; i <= doBroja; i += 2)
+            for(int i = odBroja; i <= doBroja; i += 2)
             {
                 suma += i;
             }

@@ -1,4 +1,10 @@
-﻿namespace UcenjeCS
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UcenjeCS
 {
     internal class E06ForPetlja
     {
@@ -96,7 +102,7 @@
 
 
             // petlja se može preskočiti - nastaviti
-            for (int i = 0; i < 10; i++)
+            for(int i = 0; i < 10; i++)
             {
                 if (i == 3)
                 {
@@ -108,34 +114,34 @@
 
             // petlja se može nasilno prekinuti
 
-            for (int i = 0; i < 10; i++)
+            for(int i=0; i < 10; i++)
             {
-                if (i == 3)
+                if(i== 3)
                 {
                     break;
                 }
                 Console.WriteLine(i);
             }
 
-            for (int i = 0; i < 10; i++)
+            for(int i=0;i<10; i++)
             {
-                for (int j = 0; j < 10; j++)
+                for(int j=0;j< 10; j++)
                 {
                     // kako prekinuti vanjsku petlju (varijabla i)
                     goto labela;
                     //break;// prekidam unutarnju paljtu (varijabla j)
-
+                    
                 }
             }
 
-        labela:
+            labela:
             Console.WriteLine("nastavljam nakon vanjske petlje");
 
 
             // beskonačna petlja
-            for (; ; )
+            for(; ; )
             {
-                Console.WriteLine(new Random().NextInt64(1, 100));
+                Console.WriteLine(new Random().NextInt64(1,100));
                 break;
             }
 

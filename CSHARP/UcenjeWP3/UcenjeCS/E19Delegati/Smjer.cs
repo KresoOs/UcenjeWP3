@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UcenjeCS.E15Polimorfizam
+namespace UcenjeCS.E19Delegati
 {
-    internal abstract class Entitet
+    internal class Smjer
     {
-        public int Sifra { get; set; }
+
+        public string Naziv { get; set; }
     }
 }

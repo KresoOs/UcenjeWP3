@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UcenjeCS.E16Vjezbanje
+namespace UcenjeCS.E20Ekstenzije
 {
     internal class Program
     {
 
         public Program() {
 
-            // Dobri izvori:
-            // https://raisanenmarkus.github.io/csharp/
-            // https://www.exercisescsharp.com/
+            var g = new Grupa();
+            var s = new Smjer();
 
-         
-       
+            g.OdradiPosao();
+            s.OdradiPosao();
+
+
         }
     }
 }

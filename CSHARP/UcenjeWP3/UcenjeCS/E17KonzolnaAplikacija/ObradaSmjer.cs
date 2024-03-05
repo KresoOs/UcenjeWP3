@@ -19,7 +19,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         public void PrikaziIzbornik()
         {
-
+            
             Console.WriteLine("Izbornik za rad s smjerovima");
             Console.WriteLine("1. Pregled postojećih smjerova");
             Console.WriteLine("2. Unos novog smjera");

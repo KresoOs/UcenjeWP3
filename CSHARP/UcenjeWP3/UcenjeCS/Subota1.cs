@@ -1,11 +1,17 @@
-﻿namespace UcenjeCS
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UcenjeCS
 {
     internal class Subota1
     {
 
         public static void Izvedi()
         {
-            for (int i = 0; i < 5; i++)
+            for(int i = 0; i < 5; i++)
             {
                 Console.WriteLine(DateTimeOffset.Now.ToUnixTimeMilliseconds());
                 if (i == 4)
@@ -18,7 +24,7 @@
 
             int t = 2147483647;
 
-            long l = t + 1; // implicitno
+            long l = t+1; // implicitno
 
             l = 2147483648247246276;
 

@@ -1,4 +1,10 @@
-﻿namespace UcenjeCS.E14VjezbanjeRadaSObjektima
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UcenjeCS.E14VjezbanjeRadaSObjektima
 {
     internal class Program
     {
@@ -72,7 +78,7 @@
             Console.WriteLine("**********************");
             PrikaziOsobe();
             int izbor = Pomocno.UcitajCijeliBroj("Izaberi broj osobe", 0, Osobe.Count);
-            if (izbor == 0)
+            if(izbor == 0)
             {
                 return;
             }
@@ -80,15 +86,15 @@
         }
 
         private void PromjenaOsobe()
-        {
-            if (Osobe.Count == 0)
+        {   
+            if(Osobe.Count == 0)
             {
                 Console.WriteLine("Nema osoba za mijenjat");
                 return;
             }
             PrikaziOsobe();
             int izbor = Pomocno.UcitajCijeliBroj("Izaberi broj osobe (0 odustani)", 0, Osobe.Count);
-            if (izbor == 0)
+            if(izbor == 0)
             {
                 return;
             }
@@ -125,8 +131,8 @@
 
             }
             if (Osobe.Count == 0)
-            {
-                Console.WriteLine("Nema ni jedne osobe u sustavu");
+            { 
+            Console.WriteLine("Nema ni jedne osobe u sustavu");
                 return;
             }
 

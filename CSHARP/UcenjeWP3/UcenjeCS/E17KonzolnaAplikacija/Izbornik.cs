@@ -8,13 +8,13 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         private ObradaGrupa ObradaGrupa;
 
-        public Izbornik()
+        public Izbornik() 
         {
-
+            
             Pomocno.dev = true;
             ObradaSmjer = new ObradaSmjer();
             ObradaPolaznik = new ObradaPolaznik();
-            ObradaGrupa = new ObradaGrupa(this);
+            ObradaGrupa=new ObradaGrupa(this);
             PozdravnaPoruka();
             PrikaziIzbornik();
         }
@@ -56,7 +56,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                 case 4:
                     Console.WriteLine("Hvala na korištenju, doviđenja");
                     break;
-                case 5:
+                    case 5:
                     ConsoleHelper.SetConsoleFont("Times New Roman", 40);
                     PrikaziIzbornik();
                     break;

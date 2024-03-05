@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UcenjeCS.E13Nasljedivanje
+namespace UcenjeCS.E18Lambda
 {
-    internal class Baza
+    internal class Smjer
     {
-        public Baza(string naziv) {
-            this.Naziv = naziv;
-        }
-
         public string Naziv { get; set; }
 
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

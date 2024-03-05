@@ -1,6 +1,12 @@
-﻿namespace UcenjeCS.E15Polimorfizam
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UcenjeCS.E15Polimorfizam
 {
-    internal class Predavac : Osoba
+    internal class Predavac:Osoba
     {
         public string? Iban { get; set; }
 
