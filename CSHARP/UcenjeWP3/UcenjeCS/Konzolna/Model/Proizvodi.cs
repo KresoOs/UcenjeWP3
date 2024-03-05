@@ -8,9 +8,9 @@ namespace UcenjeCS.Konzolna.Model
 {
     internal class Proizvodi:Entitet
     {
-        public string Ime { get; set; }
-        public string Opis { get; set; }
+        public string ime { get; set; }
+        public string opis { get; set; }
 
-        public string JedinicaKolicine { get; set; }
+        public string jedinicakolicine { get; set; }
     }
 }
