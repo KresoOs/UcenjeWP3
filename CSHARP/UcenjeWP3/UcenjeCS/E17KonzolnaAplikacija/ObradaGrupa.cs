@@ -122,9 +122,13 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         private List<Polaznik> PostaviPolaznike()
         {
            List<Polaznik> polaznici= new List<Polaznik>();
-            while(Pomocno.ucitajBool("Želite li dodati polaznike? (da ili bilo što drugo za ne): "))
+            if(Pomocno.ucitajCijeliBroj("1: Želite li dodati polaznike: 2: Želite li obrisati polaznika: ","Nije dobar odabir")==1)
             {
                 polaznici.Add(PostaviPolaznika());
+            }
+            else
+            {
+                polaznici.Remove(BrisanjePolaznika());
             }
 
             return polaznici;
@@ -135,6 +139,12 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Izbornik.ObradaPolaznik.PregledPolaznika();
             int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1, Izbornik.ObradaPolaznik.Polaznici.Count());
             return Izbornik.ObradaPolaznik.Polaznici[index-1];
+        }
+        private Polaznik BrisanjePolaznika()
+        {
+            Izbornik.ObradaPolaznik.PregledPolaznika();
+            int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1,Izbornik.ObradaPolaznik.Polaznici.Count());
+            return Izbornik.ObradaPolaznik.Polaznici[index - 1];
         }
 
         public void PrikaziGrupe()
