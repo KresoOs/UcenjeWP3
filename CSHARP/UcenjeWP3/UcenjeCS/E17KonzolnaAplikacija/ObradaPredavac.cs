@@ -7,8 +7,8 @@ namespace UcenjeCS.E17KonzolnaAplikacija
     {
         public List<Predavac> Predavaci { get; }
 
-        public ObradaPredavac() 
-        { 
+        public ObradaPredavac()
+        {
             Predavaci = new List<Predavac>();
             if (Pomocno.dev)
             {
@@ -18,7 +18,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         public void PrikaziIzbornik()
         {
-           
+
             Console.WriteLine("Izbornik za rad s predavačima");
             Console.WriteLine("1. Pregled postojećih predavača");
             Console.WriteLine("2. Unos novog predavača");
@@ -28,7 +28,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             switch (Pomocno.ucitajBrojRaspon("Odaberite stavku izbornika predavača: ",
                 "Odabir mora biti 1-5", 1, 5))
             {
-                
+
                 case 1:
                     PregledPredavaca();
                     PrikaziIzbornik();
@@ -80,7 +80,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Console.WriteLine("---- Predavači ----");
             Console.WriteLine("------------------");
             int b = 1;
-            foreach (Predavac predavac  in Predavaci)
+            foreach (Predavac predavac in Predavaci)
             {
                 Console.WriteLine("{0}. {1}", b++, predavac);
             }

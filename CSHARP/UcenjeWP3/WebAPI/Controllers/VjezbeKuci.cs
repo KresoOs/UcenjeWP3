@@ -27,8 +27,8 @@ namespace WebAPI.Controllers
         [Route("zad2")]
         public float Zad2(int a, int b)
         {
-            
-            return a /(float)b + a*b;
+
+            return a / (float)b + a * b;
         }
 
         //Ovdje završava ruta
@@ -38,8 +38,8 @@ namespace WebAPI.Controllers
         [Route("zad3")]
         public bool Zad3(int a, int b)
         {
-            
-            return a==b;
+
+            return a == b;
         }
 
         //Ovdje završava ruta
@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
         [Route("zad4")]
         public string Zad4(string a, string b)
         {
-            
+
             return a + " " + b;
         }
 
@@ -61,18 +61,18 @@ namespace WebAPI.Controllers
         public int Zad5(int a, int b)
         {
             int z = a + b;
-            if(z%2==0)
-                return a*b;
-            else return a+b;
-           
+            if (z % 2 == 0)
+                return a * b;
+            else return a + b;
+
         }
 
         //Ovdje završava ruta
         [HttpGet]
         [Route("zad6")]
-            public string Zad6(int ocjena)
+        public string Zad6(int ocjena)
         {
-             switch (ocjena) 
+            switch (ocjena)
             {
                 case 1:
                     return "Nedovoljan";
@@ -86,7 +86,7 @@ namespace WebAPI.Controllers
                     return "Odličan";
                 default:
                     return "nije ocijena";
-            
+
             }
         }
 

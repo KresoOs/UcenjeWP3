@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// Čitati https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON_SWIFT
+﻿// Čitati https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON_SWIFT
 
 namespace UcenjeCS.E15Polimorfizam
 {
@@ -12,7 +6,8 @@ namespace UcenjeCS.E15Polimorfizam
     {
         private List<Osoba> Osobe;
 
-        public Program() {
+        public Program()
+        {
             this.Osobe = new List<Osoba>();
             NapuniListu();
             PozdraviOsobe();
@@ -20,8 +15,8 @@ namespace UcenjeCS.E15Polimorfizam
 
         private void PozdraviOsobe()
         {
-            
-            for(int i=0;i<Osobe.Count;i++)
+
+            for (int i = 0; i < Osobe.Count; i++)
             {
                 Console.WriteLine(Osobe[i].Pozdravi());
             }
@@ -30,9 +25,10 @@ namespace UcenjeCS.E15Polimorfizam
             {
                 Console.WriteLine(o.Pozdravi());
             }
-            
 
-            Osobe.ForEach(o => {
+
+            Osobe.ForEach(o =>
+            {
                 // Ovdje je manifestacija polimorfizma
                 Console.WriteLine(o.Pozdravi());
             });
@@ -42,7 +38,7 @@ namespace UcenjeCS.E15Polimorfizam
         {
             Osobe.Add(new Polaznik()
             {
-                Ime="Marko",
+                Ime = "Marko",
                 Prezime = "Kas"
             });
             Osobe.Add(new Predavac()

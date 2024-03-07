@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS.E19Delegati
+﻿namespace UcenjeCS.E19Delegati
 {
     internal class ObradaSmjer
     {
@@ -12,12 +6,13 @@ namespace UcenjeCS.E19Delegati
         public delegate void IspisPozivSmjer(Smjer s);
         private readonly List<Smjer> Smjerovi;
 
-        public ObradaSmjer() {
-            Smjerovi = new List<Smjer>() { 
+        public ObradaSmjer()
+        {
+            Smjerovi = new List<Smjer>() {
             new Smjer() {Naziv="Prvi"},
             new Smjer() {Naziv="Drugi"}
             };
-        
+
         }
 
         public void IspisSmjer(IspisPozivSmjer poziv)
@@ -26,7 +21,7 @@ namespace UcenjeCS.E19Delegati
         }
 
         // za ovo gore ne treba delegat
-        public void IspisSmjerAction(Action<Smjer> poziv) 
+        public void IspisSmjerAction(Action<Smjer> poziv)
         {
             Smjerovi.ForEach(s => poziv(s));
         }

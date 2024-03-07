@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 
 namespace UcenjeCS.E17KonzolnaAplikacija
@@ -50,7 +48,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         private const int LF_FACESIZE = 32;
         private static IntPtr INVALID_HANDLE_VALUE = new IntPtr(-1);
 
-        public static void SetConsoleFont(string fontName = "Lucida Console",short velicina = 30)
+        public static void SetConsoleFont(string fontName = "Lucida Console", short velicina = 30)
         {
             unsafe
             {
@@ -68,7 +66,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                     Marshal.Copy(fontName.ToCharArray(), 0, ptr, fontName.Length);
 
                     // Get some settings from current font.
-                    newInfo.dwFontSize = new COORD(velicina,velicina);
+                    newInfo.dwFontSize = new COORD(velicina, velicina);
                     newInfo.FontWeight = info.FontWeight;
                     SetCurrentConsoleFontEx(hnd, false, newInfo);
                 }

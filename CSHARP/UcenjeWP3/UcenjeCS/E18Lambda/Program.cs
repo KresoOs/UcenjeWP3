@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS.E18Lambda
+﻿namespace UcenjeCS.E18Lambda
 {
     internal class Program
     {
 
-        public Program() {
+        public Program()
+        {
             Console.WriteLine(KlasicnaMetoda(3));
 
-            var Kvadrat = (int b) =>  b* b ;
+            var Kvadrat = (int b) => b * b;
 
             Console.WriteLine(Kvadrat(3));
 
@@ -22,7 +17,7 @@ namespace UcenjeCS.E18Lambda
                     return x + y + t;
                 };
 
-            Console.WriteLine(algoritam(2,3));
+            Console.WriteLine(algoritam(2, 3));
 
 
 
@@ -32,7 +27,8 @@ namespace UcenjeCS.E18Lambda
             };
 
 
-            lista.ForEach(s => {
+            lista.ForEach(s =>
+            {
                 Console.WriteLine(s.Naziv);
             });
 
@@ -43,7 +39,7 @@ namespace UcenjeCS.E18Lambda
 
         private int KlasicnaMetoda(int b)
         {
-            return b*b;
+            return b * b;
         }
 
 

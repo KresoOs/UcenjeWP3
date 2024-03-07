@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace UcenjeCS.E13Nasljedivanje
 {
@@ -64,7 +59,7 @@ namespace UcenjeCS.E13Nasljedivanje
             // string je immutable
             Console.WriteLine(s.GetHashCode());
             s = s + " je super";
-             // ne dobijem isti hashcode jer svaka manipulacija s stringom u memoriji kreira novu varijablu
+            // ne dobijem isti hashcode jer svaka manipulacija s stringom u memoriji kreira novu varijablu
             Console.WriteLine(s.GetHashCode());
 
 
@@ -86,12 +81,12 @@ namespace UcenjeCS.E13Nasljedivanje
         // korištenje GetHashCode() metode
         private void Primjer4()
         {
-            Polaznik p1 = new() { Ime="Iva"};
+            Polaznik p1 = new() { Ime = "Iva" };
             Polaznik p2 = new() { Ime = "Iva" };
 
-            Console.WriteLine(p1==p2); // što će ispisati
+            Console.WriteLine(p1 == p2); // što će ispisati
 
-            Console.WriteLine(p1.GetHashCode()); 
+            Console.WriteLine(p1.GetHashCode());
             Console.WriteLine(p2.GetHashCode());
 
 
@@ -102,17 +97,17 @@ namespace UcenjeCS.E13Nasljedivanje
         {
             var p = new Predavac()
             {
-                Ime="Karlo",
-                Prezime="Sat",
-                Iban="HR22"
+                Ime = "Karlo",
+                Prezime = "Sat",
+                Iban = "HR22"
             };
 
             Console.WriteLine(p);
 
-            Console.WriteLine(new Polaznik() { Ime="Ranko", Prezime="Ekul", BrojUgovora="1"});
+            Console.WriteLine(new Polaznik() { Ime = "Ranko", Prezime = "Ekul", BrojUgovora = "1" });
 
 
-           
+
 
         }
 
@@ -129,7 +124,7 @@ namespace UcenjeCS.E13Nasljedivanje
 
 
 
-            
+
         }
 
         private void Primjer1()

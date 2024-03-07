@@ -4,11 +4,11 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 {
     internal class ObradaGrupa
     {
-        public List<Grupa> Grupe { get;  }
+        public List<Grupa> Grupe { get; }
 
         private Izbornik Izbornik;
 
-        public ObradaGrupa(Izbornik izbornik):this()
+        public ObradaGrupa(Izbornik izbornik) : this()
         {
             this.Izbornik = izbornik;
             if (Pomocno.dev)
@@ -17,32 +17,33 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             }
         }
 
-        public ObradaGrupa() 
+        public ObradaGrupa()
         {
             Grupe = new List<Grupa>();
         }
 
         private void TestniPodaci()
         {
-            Grupe.Add(new Grupa() { 
-            Sifra=1,
-            Naziv="WP3",
-            Smjer = Izbornik.ObradaSmjer.Smjerovi[0],
-            Polaznici = Izbornik.ObradaPolaznik.Polaznici.GetRange(0,5),
-            DatumPocetka = DateTime.Now
+            Grupe.Add(new Grupa()
+            {
+                Sifra = 1,
+                Naziv = "WP3",
+                Smjer = Izbornik.ObradaSmjer.Smjerovi[0],
+                Polaznici = Izbornik.ObradaPolaznik.Polaznici.GetRange(0, 5),
+                DatumPocetka = DateTime.Now
             });
         }
 
         public void PrikaziIzbornik()
         {
-            
+
             Console.WriteLine("Izbornik za rad s grupama");
             Console.WriteLine("1. Pregled postojećih grupa");
             Console.WriteLine("2. Unos nove grupe");
             Console.WriteLine("3. Promjena postojeće grupe");
             Console.WriteLine("4. Brisanje grupe");
             Console.WriteLine("5. Povratak na glavni izbornik");
-            switch(Pomocno.ucitajBrojRaspon("Odaberite stavku izbornika grupa: ",
+            switch (Pomocno.ucitajBrojRaspon("Odaberite stavku izbornika grupa: ",
                 "Odabir mora biti 1-5", 1, 5))
             {
                 case 1:
@@ -102,7 +103,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         {
             PrikaziGrupe();
             int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj grupe: ", "Nije dobar odabir", 1, Grupe.Count());
-            Grupe.RemoveAt(index-1);
+            Grupe.RemoveAt(index - 1);
         }
 
         private void UnosNovogGrupe()
@@ -121,8 +122,8 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         private List<Polaznik> PostaviPolaznike()
         {
-           List<Polaznik> polaznici= new List<Polaznik>();
-            if(Pomocno.ucitajCijeliBroj("1: Želite li dodati polaznike: 2: Želite li obrisati polaznika: ","Nije dobar odabir")==1)
+            List<Polaznik> polaznici = new List<Polaznik>();
+            if (Pomocno.ucitajCijeliBroj("1: Želite li dodati polaznike: 2: Želite li obrisati polaznika: ", "Nije dobar odabir") == 1)
             {
                 polaznici.Add(PostaviPolaznika());
             }
@@ -138,12 +139,12 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         {
             Izbornik.ObradaPolaznik.PregledPolaznika();
             int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1, Izbornik.ObradaPolaznik.Polaznici.Count());
-            return Izbornik.ObradaPolaznik.Polaznici[index-1];
+            return Izbornik.ObradaPolaznik.Polaznici[index - 1];
         }
         private Polaznik BrisanjePolaznika()
         {
             Izbornik.ObradaPolaznik.PregledPolaznika();
-            int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1,Izbornik.ObradaPolaznik.Polaznici.Count());
+            int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1, Izbornik.ObradaPolaznik.Polaznici.Count());
             return Izbornik.ObradaPolaznik.Polaznici[index - 1];
         }
 
@@ -153,10 +154,10 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Console.WriteLine("---- Grupe ----");
             Console.WriteLine("------------------");
             int b = 1;
-            foreach(Grupa grupa in Grupe)
+            foreach (Grupa grupa in Grupe)
             {
-                Console.WriteLine("{0}. {1} ({2})",b++,grupa.Naziv, grupa.Smjer.Naziv /* ovdje ispišite naziv smjera */ );
-                foreach(Polaznik p in grupa.Polaznici)
+                Console.WriteLine("{0}. {1} ({2})", b++, grupa.Naziv, grupa.Smjer.Naziv /* ovdje ispišite naziv smjera */ );
+                foreach (Polaznik p in grupa.Polaznici)
                 {
                     Console.WriteLine("\t" + p);
                 }
@@ -164,6 +165,6 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Console.WriteLine("------------------");
         }
 
-       
+
     }
 }
