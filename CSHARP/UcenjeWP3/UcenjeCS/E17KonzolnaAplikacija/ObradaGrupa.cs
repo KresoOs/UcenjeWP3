@@ -42,9 +42,10 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Console.WriteLine("2. Unos nove grupe");
             Console.WriteLine("3. Promjena postojeće grupe");
             Console.WriteLine("4. Brisanje grupe");
-            Console.WriteLine("5. Povratak na glavni izbornik");
+            Console.WriteLine("5. Statistike grupa");
+            Console.WriteLine("6. Povratak na glavni izbornik");
             switch (Pomocno.ucitajBrojRaspon("Odaberite stavku izbornika grupa: ",
-                "Odabir mora biti 1-5", 1, 5))
+                "Odabir mora biti 1-5", 1, 6))
             {
                 case 1:
                     PrikaziGrupe();
@@ -63,6 +64,10 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                     PrikaziIzbornik();
                     break;
                 case 5:
+                    Statistika();
+                    PrikaziIzbornik();
+                    break;
+                case 6:
                     Console.WriteLine("Gotov rad s grupama");
                     break;
             }
@@ -163,8 +168,16 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                 }
             }
             Console.WriteLine("------------------");
+
         }
 
+        public void Statistika()
+        {
+            Console.WriteLine("Statistika:");
+
+            int UkupnoPolaznika = Grupe.Sum(grupa => grupa.Polaznici.Count);
+            Console.WriteLine("Ukupan broj polaznika u svim grupama: " + UkupnoPolaznika);
+        }
 
     }
 }

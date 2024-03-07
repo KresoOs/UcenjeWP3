@@ -59,6 +59,12 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             PregledPolaznika();
             int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1, Polaznici.Count());
             var p = Polaznici[index - 1];
+            var originalSifra = p.Sifra;
+            var originalIme = p.Ime;
+            var originalPrezime = p.Prezime;
+            var originalEmail = p.Email;
+            var originalOib = p.Oib;
+
             p.Sifra = Pomocno.ucitajCijeliBroj("Unesite šifra polaznika (" + p.Sifra + "): ",
                 "Unos mora biti pozitivni cijeli broj");
             p.Ime = Pomocno.UcitajString("Unesi ime polaznika (" + p.Ime + "): ", "Ime obavezno");
@@ -66,6 +72,16 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             p.Email = Pomocno.UcitajString("Unesi Email polaznika (" + p.Email + "): ", "Email obavezno");
             p.Oib = Pomocno.UcitajString("Unesi OIB polaznika (" + p.Oib + "): ", "OIB obavezno");
 
+            string izbor = Pomocno.UcitajString("Želite li odustati od promjena? (da/ne): ", "Molimo unesite da ili ne");
+            if (izbor.ToLower() == "da")
+            {
+                // Poništi promjene
+                p.Sifra = originalSifra;
+                p.Ime = originalIme;
+                p.Prezime = originalPrezime;
+                p.Email = originalEmail;
+                p.Oib = originalOib;
+            }
         }
 
         

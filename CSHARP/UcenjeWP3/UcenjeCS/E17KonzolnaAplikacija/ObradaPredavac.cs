@@ -90,8 +90,20 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         private void UcitajPredavaca()
         {
             var p = new Predavac();
-            p.Sifra = Pomocno.ucitajCijeliBroj("Unesite šifra predavača: ",
-                "Unos mora biti pozitivni cijeli broj");
+            do
+            {
+                p.Sifra = Pomocno.ucitajCijeliBroj("Unesite šifra predavača: ",
+                    "Unos mora biti pozitivni cijeli broj");
+
+                if (Predavaci.Any(predavac => predavac.Sifra == p.Sifra))
+                {
+                    Console.WriteLine("Šifra predavača već postoji. Molimo unesite novu šifru: ");
+                }
+                else
+                {
+                    break;
+                }
+            }while (true);
             p.Ime = Pomocno.UcitajString("Unesi ime predavača: ", "Ime obavezno");
             p.Prezime = Pomocno.UcitajString("Unesi Prezime predavača: ", "Prezime obavezno");
             p.Email = Pomocno.UcitajString("Unesi Email predavača: ", "Email obavezno");
