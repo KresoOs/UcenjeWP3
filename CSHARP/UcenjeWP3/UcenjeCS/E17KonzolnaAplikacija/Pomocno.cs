@@ -3,7 +3,7 @@
     internal class Pomocno
     {
         public static bool dev;
-        public static int ucitajBrojRaspon(string poruka, string greska,
+        public static int ucitajBrojRaspon(string poruka, string greska, 
             int poc, int kraj)
         {
             int b;
@@ -13,7 +13,7 @@
                 try
                 {
                     b = int.Parse(Console.ReadLine());
-                    if (b >= poc && b <= kraj)
+                    if(b>=poc && b<=kraj)
                     {
                         return b;
                     }
@@ -29,7 +29,7 @@
         internal static int ucitajCijeliBroj(string poruka, string greska)
         {
             int b;
-            while (true)
+            while(true)
             {
                 Console.Write(poruka);
                 try
@@ -79,11 +79,11 @@
         internal static string UcitajString(string poruka, string greska)
         {
             string s = "";
-            while (true)
+            while(true)
             {
                 Console.Write(poruka);
                 s = Console.ReadLine();
-                if (s != null && s.Trim().Length > 0)
+                if (s!=null && s.Trim().Length > 0)
                 {
                     return s;
                 }
@@ -93,14 +93,13 @@
 
         internal static DateTime ucitajDatum(string v1, string v2)
         {
-            while (true)
+            while(true)
             {
                 try
                 {
                     Console.WriteLine(v1);
                     return DateTime.Parse(Console.ReadLine());
-                }
-                catch (Exception ex)
+                }catch (Exception ex)
                 {
                     Console.WriteLine(v2);
                 }

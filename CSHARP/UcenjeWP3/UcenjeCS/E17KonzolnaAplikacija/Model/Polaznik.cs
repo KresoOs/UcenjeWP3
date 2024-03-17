@@ -9,7 +9,7 @@
 
         public override string ToString()
         {
-            return Ime + " " + Prezime + ", " + Email;
+            return Ime + " " + Prezime + ", " + Email ;
         }
     }
 }

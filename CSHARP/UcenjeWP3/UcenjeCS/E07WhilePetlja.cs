@@ -1,4 +1,10 @@
-﻿namespace UcenjeCS
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UcenjeCS
 {
     internal class E07WhilePetlja
     {
@@ -7,7 +13,7 @@
         {
             // while radi s boolean tipom podatka
             // beskonačna petlja
-            while (true)
+            while(true)
             {
                 break;
             }

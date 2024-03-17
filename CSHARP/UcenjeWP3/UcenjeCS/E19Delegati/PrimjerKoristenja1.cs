@@ -1,4 +1,10 @@
-﻿namespace UcenjeCS.E19Delegati
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UcenjeCS.E19Delegati
 {
     internal class PrimjerKoristenja1
     {

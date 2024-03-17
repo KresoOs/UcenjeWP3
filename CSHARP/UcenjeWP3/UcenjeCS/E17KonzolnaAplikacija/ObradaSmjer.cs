@@ -19,8 +19,8 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         public void PrikaziIzbornik()
         {
-
-           Console.WriteLine("Izbornik za rad s smjerovima");
+            
+            Console.WriteLine("Izbornik za rad s smjerovima");
             Console.WriteLine("1. Pregled postojećih smjerova");
             Console.WriteLine("2. Unos novog smjera");
             Console.WriteLine("3. Promjena postojećeg smjera");
@@ -69,7 +69,6 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             s.Cijena = Pomocno.ucitajDecimalniBroj("Unesite cijenu (. za decimalni dio) (" + s.Cijena + "): ", "Unos mora biti pozitivan broj");
             s.Upisnina = Pomocno.ucitajDecimalniBroj("Unesi upisninu (. za decimalni dio) (" + s.Upisnina + "): ", "Unos mora biti pozitivan broj");
             s.Verificiran = Pomocno.ucitajBool("Smjer verificiran? Da ili bilo što drugo za ne (" + (s.Verificiran ? "da" : "ne") + "): ");
-
         }
 
         private void BrisanjeSmjera()

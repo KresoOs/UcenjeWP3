@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace WebAPI.Controllers
 {
@@ -21,7 +22,7 @@ namespace WebAPI.Controllers
             //return (a+b)%2==0 ? a*b : a+b;
 
             var zbroj = a + b;
-            if (zbroj % 2 == 0)
+            if(zbroj%2==0)
             {
                 return a * b;
             }

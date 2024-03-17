@@ -48,7 +48,7 @@ namespace WebAPI.Controllers
         public float Zad3(int a, int b)
         {
             // Ruta vraća kvocijent dvaju primljenih brojeva
-            return (a * b) + (a / (float)b);
+            return (a*b) + (a/(float)b);
         }
         // Ovdje završava ruta
 
@@ -58,7 +58,7 @@ namespace WebAPI.Controllers
         [Route("zad4")]
         public bool Zad4(int a, int b)
         {
-            return a == b;
+            return a==b;
         }
         // Ovdje završava ruta
 
@@ -70,7 +70,7 @@ namespace WebAPI.Controllers
         public string Zad5(string a, string b)
         {
 
-            return a + " " + b;
+            return a  +  " " +  b;
         }
         // Ovdje završava ruta
     }

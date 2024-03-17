@@ -7,8 +7,8 @@ namespace UcenjeCS.E17KonzolnaAplikacija
     {
         public List<Polaznik> Polaznici { get; }
 
-        public ObradaPolaznik()
-        {
+        public ObradaPolaznik() 
+        { 
             Polaznici = new List<Polaznik>();
             if (Pomocno.dev)
             {
@@ -18,7 +18,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         public void PrikaziIzbornik()
         {
-
+           
             Console.WriteLine("Izbornik za rad s polaznicima");
             Console.WriteLine("1. Pregled postojećih polaznika");
             Console.WriteLine("2. Unos novog polaznika");
@@ -28,7 +28,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             switch (Pomocno.ucitajBrojRaspon("Odaberite stavku izbornika polaznika: ",
                 "Odabir mora biti 1-5", 1, 5))
             {
-
+                
                 case 1:
                     PregledPolaznika();
                     PrikaziIzbornik();
@@ -55,36 +55,16 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         private void PromjenaPolaznika()
         {
-
             PregledPolaznika();
             int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1, Polaznici.Count());
             var p = Polaznici[index - 1];
-            var originalSifra = p.Sifra;
-            var originalIme = p.Ime;
-            var originalPrezime = p.Prezime;
-            var originalEmail = p.Email;
-            var originalOib = p.Oib;
-
             p.Sifra = Pomocno.ucitajCijeliBroj("Unesite šifra polaznika (" + p.Sifra + "): ",
                 "Unos mora biti pozitivni cijeli broj");
             p.Ime = Pomocno.UcitajString("Unesi ime polaznika (" + p.Ime + "): ", "Ime obavezno");
             p.Prezime = Pomocno.UcitajString("Unesi Prezime polaznika (" + p.Prezime + "): ", "Prezime obavezno");
             p.Email = Pomocno.UcitajString("Unesi Email polaznika (" + p.Email + "): ", "Email obavezno");
             p.Oib = Pomocno.UcitajString("Unesi OIB polaznika (" + p.Oib + "): ", "OIB obavezno");
-
-            string izbor = Pomocno.UcitajString("Želite li odustati od promjena? (da/ne): ", "Molimo unesite da ili ne");
-            if (izbor.ToLower() == "da")
-            {
-                // Poništi promjene
-                p.Sifra = originalSifra;
-                p.Ime = originalIme;
-                p.Prezime = originalPrezime;
-                p.Email = originalEmail;
-                p.Oib = originalOib;
-            }
         }
-
-        
 
         private void BrisanjePolaznika()
         {
@@ -99,7 +79,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Console.WriteLine("---- Polaznici ----");
             Console.WriteLine("------------------");
             int b = 1;
-            foreach (Polaznik polaznik in Polaznici)
+            foreach (Polaznik polaznik  in Polaznici)
             {
                 Console.WriteLine("{0}. {1}", b++, polaznik);
             }
@@ -108,12 +88,11 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         private void UcitajPolaznika()
         {
-
             var p = new Polaznik();
             p.Sifra = Pomocno.ucitajCijeliBroj("Unesite šifra polaznika: ",
                 "Unos mora biti pozitivni cijeli broj");
-            p.Ime = Pomocno.UcitajString("Unesi sveto ime polaznika: ", "Ime obavezno");
-            p.Prezime = Pomocno.UcitajString("Unesi sveto Prezime polaznika: ", "Prezime obavezno");
+            p.Ime = Pomocno.UcitajString("Unesi ime polaznika: ", "Ime obavezno");
+            p.Prezime = Pomocno.UcitajString("Unesi Prezime polaznika: ", "Prezime obavezno");
             p.Email = Pomocno.UcitajString("Unesi Email polaznika: ", "Email obavezno");
             p.Oib = Pomocno.UcitajString("Unesi OIB polaznika: ", "OIB obavezno");
             Polaznici.Add(p);
@@ -123,11 +102,10 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         private void TestniPodaci()
         {
 
-            for (int i = 0; i < 20; i++)
-            {
+            for(int i=0;i<20; i++) {
                 Polaznici.Add(new Polaznik
                 {
-                    Sifra = i + 1,
+                    Sifra = i+1,
                     Ime = Faker.Name.First(),
                     Prezime = Faker.Name.Last(),
                     Email = Faker.Internet.Email(),

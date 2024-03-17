@@ -1,4 +1,8 @@
-﻿new UcenjeCS.E17KonzolnaAplikacija.Izbornik();
+﻿
+
+using UcenjeCS;
+
+new UcenjeCS.E17KonzolnaAplikacija.Izbornik();
 
 //new UcenjeCS.E16Vjezbanje.Program();
 
