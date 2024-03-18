@@ -95,6 +95,24 @@ namespace UcenjeCS.Konzolna
                
             }
         }
+        public void PregledDjelatnika()
+        {
+            Console.WriteLine("------------------");
+            Console.WriteLine("---- Djelatnici ----");
+            Console.WriteLine("------------------");
+            int b = 1;
+            foreach (Djelatnik djelatnik in Djelatnici)
+            {
+                Console.WriteLine("{0}. {1}", b++, djelatnik);
+            }
+            Console.WriteLine("------------------");
+        }
+        private void BrisanjeDjelatnika()
+        {
+            PregledDjelatnika();
+            int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1,Djelatnici.Count());
+            Djelatnici.RemoveAt(index - 1);
+        }
 
         private void TestniPodaci()
         {

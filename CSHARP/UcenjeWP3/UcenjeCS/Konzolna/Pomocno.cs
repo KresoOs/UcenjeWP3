@@ -107,12 +107,7 @@
                 }
             }
         }
-    }
-    // Napišite metodu koja prima string poruku i vraća
-    // string koji ne smije biti prazan
-    // metoda se zove UcitajString
-
-    public static string UcitajString(string poruka)
+        public static string UcitajString(string poruka)
         {
             string s;
             for (; ; )
@@ -153,3 +148,5 @@
         }
     }
 }
+    
+    
