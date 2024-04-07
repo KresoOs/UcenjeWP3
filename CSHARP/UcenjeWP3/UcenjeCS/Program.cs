@@ -2,7 +2,7 @@
 
 using UcenjeCS;
 
-new UcenjeCS.Konzolna.Izbornik();
+new UcenjeCS.E17KonzolnaAplikacija.Izbornik();
 
 //new UcenjeCS.E16Vjezbanje.Program();
 

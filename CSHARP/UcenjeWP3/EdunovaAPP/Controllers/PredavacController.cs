@@ -8,29 +8,29 @@ namespace EdunovaAPP.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class SmjerController : EdunovaController<Smjer,SmjerDTORead,SmjerDTOInsertUpdate>
+    public class PredavacController : EdunovaController<Predavac, PredavacDTORead, PredavacDTOInsertUpdate>
     {
-        public SmjerController(EdunovaContext context) : base(context)
+        public PredavacController(EdunovaContext context) : base(context)
         {
-            DbSet=_context.Smjerovi;
+            DbSet = _context.Predavaci;
         }
-        protected override void KontrolaBrisanje(Smjer entitet)
+
+        protected override void KontrolaBrisanje(Predavac entitet)
         {
             var lista = _context.Grupe
-                .Include(x => x.Smjer)
-                .Where(x => x.Smjer.Sifra == entitet.Sifra)
+                .Include(x => x.Predavac)
+                .Where(x => x.Predavac!=null && x.Predavac.Sifra == entitet.Sifra)
                 .ToList();
             if (lista != null && lista.Count > 0)
             {
                 StringBuilder sb = new();
-                sb.Append("Smjer se ne može obrisati jer je postavljen na grupama: ");
+                sb.Append("Predavač se ne može obrisati jer je postavljen na grupama: ");
                 foreach (var e in lista)
                 {
                     sb.Append(e.Naziv).Append(", ");
                 }
-                throw new Exception(sb.ToString()[..^2]); // umjesto sb.ToString().Substring(0, sb.ToString().Length - 2)
+                throw new Exception(sb.ToString()[..^2]);
             }
         }
-       
     }
 }

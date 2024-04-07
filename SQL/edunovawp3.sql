@@ -1,3 +1,27 @@
+-- Ovo za produkciju treba
+SELECT name, collation_name FROM sys.databases;
+GO
+-- Doma primjeniti na ime svoje baze 3 puta
+ALTER DATABASE db_a98acf_edunova SET SINGLE_USER WITH
+ROLLBACK IMMEDIATE;
+GO
+ALTER DATABASE db_a98acf_edunova COLLATE Croatian_CI_AS;
+GO
+ALTER DATABASE db_a98acf_edunova SET MULTI_USER;
+GO
+SELECT name, collation_name FROM sys.databases;
+GO
+
+
+drop table clanovi;
+drop table grupe;
+drop table polaznici;
+drop table predavaci;
+drop table smjerovi;
+
+
+
+-- lokalni razvoj
 use master;
 go
 drop database if exists edunovawp3;
@@ -8,6 +32,8 @@ go
 --drop database edunovawp3;
 --use master
 use edunovawp3;
+
+-- završio lokalni razvoj
 
 create table smjerovi(
 sifra int not null primary key identity(1,1),
