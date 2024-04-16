@@ -14,6 +14,33 @@ namespace EdunovaAPP.Controllers
         {
             DbSet = _context.Polaznici;
         }
+
+        [HttpGet]
+        [Route("trazi/{uvjet}")]
+        public IActionResult TraziPolaznik(string uvjet)
+        {
+            if (uvjet == null || uvjet.Length < 3)
+            {
+                return BadRequest(ModelState);
+            }
+            uvjet = uvjet.ToLower();
+            try
+            {
+                IEnumerable<Polaznik> query = _context.Polaznici;
+                var niz = uvjet.Split(" ");
+                foreach (var s in uvjet.Split(" "))
+                {
+                    query = query.Where(p => p.Ime.ToLower().Contains(s) || p.Prezime.ToLower().Contains(s));
+                }
+                var polaznici = query.ToList();
+                return new JsonResult(_mapper.MapReadList(polaznici));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         protected override void KontrolaBrisanje(Polaznik entitet)
         {
             var entitetIzbaze = _context.Polaznici

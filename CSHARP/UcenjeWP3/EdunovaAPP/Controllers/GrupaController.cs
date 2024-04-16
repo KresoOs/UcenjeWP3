@@ -16,12 +16,122 @@ namespace EdunovaAPP.Controllers
             DbSet = _context.Grupe;
             _mapper = new MappingGrupa();
         }
+
+        [HttpGet]
+        [Route("Polaznici/{sifraGrupe:int}")]
+        public IActionResult GetPolaznici(int sifraGrupe)
+        {
+            if (!ModelState.IsValid || sifraGrupe <= 0)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var p = _context.Grupe
+                    .Include(i => i.Polaznici).FirstOrDefault(x => x.Sifra == sifraGrupe);
+                if (p == null)
+                {
+                    return BadRequest("Ne postoji grupa s šifrom " + sifraGrupe + " u bazi");
+                }
+                var mapping = new Mapping<Polaznik,PolaznikDTORead,PolaznikDTOInsertUpdate>();
+                return new JsonResult(mapping.MapReadList(p.Polaznici));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+        [HttpPost]
+        [Route("{sifra:int}/dodaj/{polaznikSifra:int}")]
+        public IActionResult DodajPolaznika(int sifra, int polaznikSifra)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (sifra <= 0 || polaznikSifra <= 0)
+            {
+                return BadRequest("Šifra grupe ili polaznika ije dobra");
+            }
+            try
+            {
+                var grupa = _context.Grupe
+                    .Include(g => g.Polaznici)
+                    .FirstOrDefault(g => g.Sifra == sifra);
+                if (grupa == null)
+                {
+                    return BadRequest("Ne postoji grupa s šifrom " + sifra + " u bazi");
+                }
+                var polaznik = _context.Polaznici.Find(polaznikSifra);
+                if (polaznik == null)
+                {
+                    return BadRequest("Ne postoji polaznik s šifrom " + polaznikSifra + " u bazi");
+                }
+                grupa.Polaznici.Add(polaznik);
+                _context.Grupe.Update(grupa);
+                _context.SaveChanges();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                       StatusCodes.Status503ServiceUnavailable,
+                       ex.Message);
+            }
+        }
+
+
+
+        [HttpDelete]
+        [Route("{sifra:int}/obrisi/{polaznikSifra:int}")]
+        public IActionResult ObrisiPolaznika(int sifra, int polaznikSifra)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (sifra <= 0 || polaznikSifra <= 0)
+            {
+                return BadRequest("Šifra grupe ili polaznika nije dobra");
+            }
+            try
+            {
+                var grupa = _context.Grupe
+                    .Include(g => g.Polaznici)
+                    .FirstOrDefault(g => g.Sifra == sifra);
+                if (grupa == null)
+                {
+                    return BadRequest("Ne postoji grupa s šifrom " + sifra + " u bazi");
+                }
+                var polaznik = _context.Polaznici.Find(polaznikSifra);
+                if (polaznik == null)
+                {
+                    return BadRequest("Ne postoji polaznik s šifrom " + polaznikSifra + " u bazi");
+                }
+                grupa.Polaznici.Remove(polaznik);
+                _context.Grupe.Update(grupa);
+                _context.SaveChanges();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+        }
+
+
+
         protected override void KontrolaBrisanje(Grupa entitet)
         {
-            if (entitet!=null && entitet.Polaznici != null && entitet.Polaznici.Count() > 0)
+            if (entitet!=null && entitet.Polaznici != null && entitet.Polaznici.Count > 0)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append("Grupa se ne može obrisati jer su na njon polaznici: ");
+                sb.Append("Grupa se ne može obrisati jer ima polaznike: ");
                 foreach (var e in entitet.Polaznici)
                 {
                     sb.Append(e.Ime).Append(' ').Append(e.Prezime).Append(", ");

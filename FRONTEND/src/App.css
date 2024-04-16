@@ -5,3 +5,7 @@
 .siroko{
   width: 100%;
 }
+
+.labelaAtributa:first-letter, .form-check-label:first-letter {
+  text-transform: uppercase;
+}

@@ -1,105 +1,66 @@
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { RoutesNames } from "../../constants";
-import SmjerService from "../../services/SmjerService";
 import { useEffect, useState } from "react";
+import {  Container, Form } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
+import Service from "../../services/SmjerService";
+import { RoutesNames } from "../../constants";
+import InputText from "../../components/InputText";
+import InputCheckbox from "../../components/InputCheckbox";
+import Akcije from "../../components/Akcije";
 
+export default function SmjeroviPromjeni(){
 
-export default function SmjeroviPromjena(){
     const navigate = useNavigate();
     const routeParams = useParams();
-    const [smjer, setSmjer] = useState({});
+    const [smjer,setSmjer] = useState({});
 
-   async function dohvatiSmjer(){
-        const o = await SmjerService.getBySifra(routeParams.sifra);
-        if(o.greska){
-            console.log(o.poruka);
-            alert('pogledaj konzolu');
+    async function dohvatiSmjer(){
+        const odgovor = await Service.getBySifra('Smjer',routeParams.sifra)
+        if(!odgovor.ok){
+            alert(Service.dohvatiPorukeAlert(odgovor.podaci));
+            navigate(RoutesNames.SMJER_PREGLED);
             return;
         }
-        setSmjer(o.poruka);
-   }
-
-   async function promjeni(smjer){
-    const odgovor = await SmjerService.put(routeParams.sifra,smjer);
-    if (odgovor.greska){
-        console.log(odgovor.poruka);
-        alert('Pogledaj konzolu');
-        return;
+        setSmjer(odgovor.podaci);
     }
-    navigate(RoutesNames.SMJER_PREGLED);
-}
 
-   useEffect(()=>{
-    dohvatiSmjer();
-   },[]);
+    useEffect(()=>{
+        dohvatiSmjer();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
 
-    function obradiSubmit(e){ // e predstavlja event
+    async function promjeniSmjer(smjer){
+        const odgovor = await Service.promjeni('Smjer',routeParams.sifra,smjer);
+        if(odgovor.ok){
+          navigate(RoutesNames.SMJER_PREGLED);
+          return;
+        }
+        alert(Service.dohvatiPorukeAlert(odgovor.podaci));
+    }
+
+    
+    function handleSubmit(e){
         e.preventDefault();
-        //alert('Dodajem smjer');
-
         const podaci = new FormData(e.target);
-
-        const smjer = {
-            naziv: podaci.get('naziv'),  // 'naziv' je name atribut u Form.Control
-            trajanje: parseInt(podaci.get('trajanje')), //na backend je int
+        promjeniSmjer({
+            naziv: podaci.get('naziv'),
+            trajanje: parseInt(podaci.get('trajanje')),
             cijena: parseFloat(podaci.get('cijena')),
-            verificiran: podaci.get('verificiran')=='on' ? true : false            
-        };
-        //console.log(routeParams.sifra);
-        //console.log(smjer);
-        promjeni(smjer);
-
+            verificiran: podaci.get('verificiran')=='on' ? true: false
+        });
     }
+
+
 
     return (
-
         <Container>
-            <Form onSubmit={obradiSubmit}>
-
-                <Form.Group controlId="naziv">
-                    <Form.Label>Naziv</Form.Label>
-                    <Form.Control 
-                    type="text" 
-                    name="naziv" 
-                    defaultValue={smjer.naziv}
-                    required />
-                </Form.Group>
-
-                <Form.Group controlId="trajanje">
-                    <Form.Label>Trajanje</Form.Label>
-                    <Form.Control 
-                    type="number" 
-                    name="trajanje"
-                    defaultValue={smjer.trajanje}
-                     />
-                </Form.Group>
-
-                <Form.Group controlId="cijena">
-                    <Form.Label>Cijena</Form.Label>
-                    <Form.Control type="text" name="cijena" defaultValue={smjer.cijena} />
-                </Form.Group>
-
-                <Form.Group controlId="verificiran">
-                    <Form.Check label="Verificiran" name="verificiran" defaultChecked={smjer.verificiran   } />
-                </Form.Group>
-
-                <hr />
-                <Row>
-                    <Col>
-                        <Link className="btn btn-danger siroko" to={RoutesNames.SMJER_PREGLED}>
-                            Odustani
-                        </Link>
-                    </Col>
-                    <Col>
-                        <Button className="siroko" variant="primary" type="submit">
-                            Promjeni
-                        </Button>
-                    </Col>
-                </Row>
-
-            </Form>
-        </Container>
-
+           <Form onSubmit={handleSubmit}>
+                    <InputText atribut='naziv' vrijednost={smjer.naziv} />
+                    <InputText atribut='trajanje' vrijednost={smjer.trajanje} />
+                    <InputText atribut='cijena' vrijednost={smjer.cijena} />
+                    <InputCheckbox atribut='verificiran' vrijednost={smjer.verificiran} />
+                    <Akcije odustani={RoutesNames.SMJER_PREGLED} akcija='Promjeni smjer' />
+             </Form>
+             </Container>
     );
+
 }
