@@ -11,7 +11,7 @@ namespace UcenjeCS.Konzolna
         
 
 
-    {
+    
         internal class ObradaKupac
         {
             public List<Kupac> Kupci { get; }
